@@ -10,7 +10,9 @@ import UIKit
 class MyTableViewCell: UITableViewCell {
 
     //ViewController 클래스 내부 메서드에 연결됨
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
