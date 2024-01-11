@@ -15,6 +15,8 @@
 		E02FACF02B271C0D00FA2534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02FACEE2B271C0D00FA2534 /* LaunchScreen.storyboard */; };
 		E02FACF82B27217600FA2534 /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FACF72B27217500FA2534 /* TodoData.swift */; };
 		E02FACFA2B2840F600FA2534 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FACF92B2840F600FA2534 /* MyTableViewCell.swift */; };
+		E07175602B4EB695007794D0 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071755F2B4EB695007794D0 /* GroupViewController.swift */; };
+		E07175622B4FDE01007794D0 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07175612B4FDE01007794D0 /* GroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E02FACF12B271C0D00FA2534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E02FACF72B27217500FA2534 /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
 		E02FACF92B2840F600FA2534 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		E071755F2B4EB695007794D0 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		E07175612B4FDE01007794D0 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				E02FACE32B271C0B00FA2534 /* AppDelegate.swift */,
 				E02FACE52B271C0B00FA2534 /* SceneDelegate.swift */,
+				E071755F2B4EB695007794D0 /* GroupViewController.swift */,
+				E07175612B4FDE01007794D0 /* GroupTableViewCell.swift */,
 				E02FACE72B271C0B00FA2534 /* ViewController.swift */,
 				E02FACF92B2840F600FA2534 /* MyTableViewCell.swift */,
 				E02FACF72B27217500FA2534 /* TodoData.swift */,
@@ -144,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07175622B4FDE01007794D0 /* GroupTableViewCell.swift in Sources */,
+				E07175602B4EB695007794D0 /* GroupViewController.swift in Sources */,
 				E02FACE82B271C0B00FA2534 /* ViewController.swift in Sources */,
 				E02FACF82B27217600FA2534 /* TodoData.swift in Sources */,
 				E02FACE42B271C0B00FA2534 /* AppDelegate.swift in Sources */,
