@@ -73,7 +73,7 @@ class DataStore {
 
 //MARK: 메서드
 //toDoList 배열을 순회하며 해당 카테고리에 속하는 요소의 수를 반환
-func toDoNumsInCategory (section: Int) -> Int {
+func toDoNumsInCategory(section: Int) -> Int {
     var count = 0
     
     for i in toDoList {
@@ -85,7 +85,7 @@ func toDoNumsInCategory (section: Int) -> Int {
 }
 
 //toDoList 배열을 순회하며 해당 카테고리에 속하는 새로운 배열을 반환
-func toDoListInCategory (section:Int) -> [Todo] {
+func toDoListInCategory(section:Int) -> [Todo] {
     var toDoListInCategory: [Todo] = []
     
     for i in toDoList.indices {
@@ -95,4 +95,26 @@ func toDoListInCategory (section:Int) -> [Todo] {
         }
     }
     return toDoListInCategory
+}
+
+//해당 카테고리에 속하는 todo 삭제
+func deletetoDoInCategory(section:Int) {
+    for i in toDoList.indices {
+        if toDoList[i].category == section {
+            toDoList.remove(at: i)
+        }
+    }
+}
+
+//완료 상태인 todo를 요소로 갖는 배열을 반환
+func completeTodo() -> [Todo] {
+    var completedtodo: [Todo] = []
+    
+    for i in toDoList {
+        if i.isCompleted {
+            completedtodo.append(i)
+        }
+    }
+    
+    return completedtodo
 }

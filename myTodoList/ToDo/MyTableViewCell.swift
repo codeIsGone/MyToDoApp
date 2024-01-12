@@ -19,9 +19,6 @@ class MyTableViewCell: UITableViewCell {
         
         let todo = toDoListInCategory[indexPath.row]
         
-        //선택셀 표시 off
-        self.selectionStyle = .none
-        
         //완료 여부 확인하여 타이틀에 취소선 적용
         if todo.isCompleted == true {
             //색 변경

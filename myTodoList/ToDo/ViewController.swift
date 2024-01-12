@@ -38,9 +38,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UserDefaults에 저장된 데이터 read
-        DataStore.shared.load()
-        
         //배경 터치 감지용 변수 생성
         let backgroundTouchGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundtap))
         tasksViewBackground.addGestureRecognizer(backgroundTouchGesture)
@@ -220,7 +217,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         //수정 액션 초기화, 핸들러에서 alert로 label text 수정 로직 구현
         let modifyAction = UIContextualAction(style: .normal, title: "편집", handler: {(action, view, completionHandler) in
-            let alert = UIAlertController(title: "ToDo 추가", message: "할일을 입력하세요.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "ToDo 변경", message: "할일을 입력하세요.", preferredStyle: .alert)
             
             let confirmAction = UIAlertAction(title: "수정", style: .default) {action in
                 if let userInput = alert.textFields?.first?.text {

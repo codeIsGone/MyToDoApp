@@ -2,19 +2,19 @@
 //  GroupTableViewCell.swift
 //  myTodoList
 //
-//  Created by 홍희곤 on 1/11/24.
+//  Created by 홍희곤 on 1/12/24.
 //
 
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
-    
-    @IBOutlet var aa: UILabel?
+
+    @IBOutlet weak var titleLabel: UILabel!
     
     func setCell(indexPath:IndexPath) {
-        
+        self.titleLabel.text = categoryList[indexPath.row].title
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +25,5 @@ class GroupTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
