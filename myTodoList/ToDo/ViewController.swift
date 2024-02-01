@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let dataManager = DataStore.shared
+    
     //MARK: - Outlet 생성
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var copyCompleteView: UIView!
@@ -100,6 +102,7 @@ class ViewController: UIViewController {
         
     }
     
+    /*
     //MARK: - addCategoryButton 탭 로직
     @IBAction func tapAddCategoryButton(_ sender: UIButton) {
         
@@ -145,6 +148,7 @@ class ViewController: UIViewController {
         //present로 Alert 나타내기
         self.present(alert, animated: true, completion: nil)
     }
+     */
     
     //MARK: - addTaskButton 탭 로직
     @IBAction func tapAddTaskButton(_ sender: UIButton) {
@@ -159,22 +163,14 @@ class ViewController: UIViewController {
                 
                 //예외처리
                 guard userInput != "" else {return}
-                
-                //Todo 인스턴스 생성
-                var todo = Todo()
-                todo.title = userInput
-                
-                //배열에 append
-                toDoList.append(todo)
+                                
+                self.dataManager.createTask(title: userInput)
                 
                 //tasksview off
                 self.offTasksViewButton(self.offTasksViewButton)
                 
                 //변경사항을 반영하여 테이블뷰 업데이트
                 self.myTableView.reloadData()
-                
-                //UserDefaults에 todoList 저장
-                DataStore.shared.todoSave()
             }
         }
         
@@ -224,13 +220,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     
                     //빈 스트링 리턴
                     guard userInput != "" else {return}
+                    
                     //경로를 받아 타이틀 수정
-                    toDoList[indexPath.row].title = userInput
+                    self.dataManager.fetchTaskTitle(title: userInput, index: indexPath.row)
+                    
                     //변경사항을 반영하여 테이블뷰 업데이트
                     self.myTableView.reloadData()
-                    
-                    //UserDefaults에 todoList 저장
-                    DataStore.shared.todoSave()
                 }
             }
             let rejectAction = UIAlertAction(title: "취소", style: .destructive, handler: nil)
@@ -241,7 +236,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             //addTextField 메서드로 Alert 객체에 textField 추가
             alert.addTextField {(textField) in
-                textField.text = toDoList[indexPath.row].title
+                textField.text = self.dataManager.tasks[indexPath.row].title
             }
             self.present(alert, animated: true, completion: nil)
         })
@@ -249,18 +244,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         //삭제 액션 초기화, 핸들러에서 toDoList remove 메서드 구현
         let deleteAction = UIContextualAction(style: .normal, title: "삭제", handler: {(action, view, completionHandler) in
             
-            let todo = toDoListInCategory(section: indexPath.section)[indexPath.row]
-            toDoList.remove(at: todo.id)
+            self.dataManager.deleteTask(index: indexPath.row)
             self.myTableView.reloadData()
             
-            //UserDefaults에 todoList 저장
-            DataStore.shared.todoSave()
         })
         
         //복사 액션 초기화, 핸들러에서 사용자 클립보드에 해당 경로 text 대입
         let copyAction = UIContextualAction(style: .normal, title: "복사", handler: {(action, view, completionHandler) in
-            let todo = toDoListInCategory(section: indexPath.section)[indexPath.row]
-            UIPasteboard.general.string = todo.title
+            let task = self.dataManager.tasks[indexPath.row]
+            UIPasteboard.general.string = task.title
             self.copyCompleteViewAppear()
         })
         
@@ -282,14 +274,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let currentTimestamp = Date().timeIntervalSince1970
         
         if lastSelectedIndexPath == indexPath && currentTimestamp - lastSelectedTimestamp < 0.4 {
-            let todo = toDoListInCategory(section: indexPath.section)[indexPath.row]
             
-            toDoList[todo.id].isCompleted = !toDoList[todo.id].isCompleted
+            self.dataManager.fetchTaskIsCompleted(index: indexPath.row)
+            
             self.myTableView.reloadData()
-            
-            //UserDefaults에 todoList 데이터 저장
-            DataStore.shared.todoSave()
-            
+
             return
         }
         lastSelectedIndexPath = indexPath
@@ -298,37 +287,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     //섹션 수 지정
     func numberOfSections(in tableView: UITableView) -> Int {
-        return categoryList.count
+        return 1
     }
     
     //TableView의 섹션별 로우 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoNumsInCategory(section: section)
+        return self.dataManager.tasks.count
     }
     
     //섹션별 헤더에 뷰 추가
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //헤더뷰 생성
-        let headerView = UIView()
-        
-        //헤더뷰 레이블 생성
-        let headerlabel = UILabel()
-        headerlabel.text = "\(categoryList[section].title)(\(toDoNumsInCategory(section: section)))"
-        headerlabel.font = .systemFont(ofSize: 12)
-        headerlabel.textColor = .systemGray
-        headerlabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        //헤더뷰에 컴포넌트 추가
-        headerView.addSubview(headerlabel)
-        
-        //Autolayout 제약 조건 추가
-        NSLayoutConstraint.activate([
-            headerlabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8),
-            headerlabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 24),
-        ])
-        
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        //헤더뷰 생성
+//        let headerView = UIView()
+//        
+//        //헤더뷰 레이블 생성
+//        let headerlabel = UILabel()
+//        headerlabel.text = "\(categoryList[section].title)(\(toDoNumsInCategory(section: section)))"
+//        headerlabel.font = .systemFont(ofSize: 12)
+//        headerlabel.textColor = .systemGray
+//        headerlabel.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        //헤더뷰에 컴포넌트 추가
+//        headerView.addSubview(headerlabel)
+//        
+//        //Autolayout 제약 조건 추가
+//        NSLayoutConstraint.activate([
+//            headerlabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8),
+//            headerlabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 24),
+//        ])
+//        
+//        return headerView
+//    }
 }
 
 //MARK: - String 타입에 취소선 메서드 추가

@@ -11,9 +11,9 @@ class GroupTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    func setCell(indexPath:IndexPath) {
-        self.titleLabel.text = categoryList[indexPath.row].title
-    }
+//    func setCell(indexPath:IndexPath) {
+//        self.titleLabel.text = categoryList[indexPath.row].title
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,9 +13,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //UserDefaults에 저장된 데이터 read
-        DataStore.shared.load()
+        
+        DataStore.shared.readTask()
         
         //URL 주소 설정
         let logoImageURLSource = "https://spartacodingclub.kr/css/images/scc-og.jpg"

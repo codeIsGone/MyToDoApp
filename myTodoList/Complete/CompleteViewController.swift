@@ -22,16 +22,17 @@ class CompleteViewController: UIViewController {
 extension CompleteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let completedTodo = completeTodo()
-        return completedTodo.count
+        let completedTask = DataStore.shared.tasks.filter({$0.isCompleted == true})
+        return completedTask.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let completedTodo = completeTodo()[indexPath.row]
         
         let cell = completeTableView.dequeueReusableCell(withIdentifier: "completeCell", for: indexPath) as! CompleteTableViewCell
         
-        cell.titleLabel.text = completedTodo.title
+        let completedTask = DataStore.shared.tasks.filter({$0.isCompleted == true})[indexPath.row]
+        
+        cell.titleLabel.text = completedTask.title
         
         return cell
     }

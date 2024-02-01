@@ -14,24 +14,21 @@ class MyTableViewCell: UITableViewCell {
     
     func setCell(indexPath:IndexPath) {
         
-        //카테고리(섹션)가 구분된 새로운 ToDo 배열 생성
-        let toDoListInCategory = toDoListInCategory(section: indexPath.section)
-        
-        let todo = toDoListInCategory[indexPath.row]
+        let task = DataStore.shared.tasks[indexPath.row]
         
         //완료 여부 확인하여 타이틀에 취소선 적용
-        if todo.isCompleted == true {
+        if task.isCompleted == true {
             //색 변경
             self.titleLabel.textColor = .lightGray
             //속성 적용된 텍스트 대입
-            self.titleLabel.attributedText = todo.title.strikeThrough()
+            self.titleLabel.attributedText = task.title?.strikeThrough()
         } else {
             //색 복원
             self.titleLabel.textColor = .black
             //속성 복원
             self.titleLabel.attributedText = nil
             //텍스트 대입
-            self.titleLabel.text = todo.title
+            self.titleLabel.text = task.title
         }
     }
     
