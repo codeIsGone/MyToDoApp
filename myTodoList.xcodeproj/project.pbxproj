@@ -21,6 +21,9 @@
 		E071756E2B4FF3BC007794D0 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E071756D2B4FF3BC007794D0 /* PetViewController.swift */; };
 		E07175732B51023E007794D0 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07175722B51023E007794D0 /* GroupTableViewCell.swift */; };
 		E07175752B51221E007794D0 /* CompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07175742B51221E007794D0 /* CompleteTableViewCell.swift */; };
+		E078252C2B6B2D0800F69C1B /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078252B2B6B2D0800F69C1B /* ProfileDesignViewController.swift */; };
+		E078252F2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078252E2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift */; };
+		E07825312B6B2E5F00F69C1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07825302B6B2E5F00F69C1B /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		E071756D2B4FF3BC007794D0 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		E07175722B51023E007794D0 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		E07175742B51221E007794D0 /* CompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTableViewCell.swift; sourceTree = "<group>"; };
+		E078252B2B6B2D0800F69C1B /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
+		E078252E2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E07825302B6B2E5F00F69C1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 				E071756F2B4FF3F9007794D0 /* ToDo */,
 				E07175702B4FF413007794D0 /* Complete */,
 				E07175712B4FF42A007794D0 /* Pet */,
+				E078252D2B6B2D1400F69C1B /* Profile */,
 				E02FACF72B27217500FA2534 /* TodoData.swift */,
 				E02FACE92B271C0B00FA2534 /* Main.storyboard */,
 				E02FACEC2B271C0D00FA2534 /* Assets.xcassets */,
@@ -113,6 +120,16 @@
 				E071756D2B4FF3BC007794D0 /* PetViewController.swift */,
 			);
 			path = Pet;
+			sourceTree = "<group>";
+		};
+		E078252D2B6B2D1400F69C1B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E078252B2B6B2D0800F69C1B /* ProfileDesignViewController.swift */,
+				E078252E2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift */,
+				E07825302B6B2E5F00F69C1B /* ProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +205,9 @@
 			files = (
 				E07175602B4EB695007794D0 /* GroupViewController.swift in Sources */,
 				E02FACE82B271C0B00FA2534 /* ViewController.swift in Sources */,
+				E078252C2B6B2D0800F69C1B /* ProfileDesignViewController.swift in Sources */,
 				E02FACF82B27217600FA2534 /* TodoData.swift in Sources */,
+				E07825312B6B2E5F00F69C1B /* ProfileViewController.swift in Sources */,
 				E071756E2B4FF3BC007794D0 /* PetViewController.swift in Sources */,
 				E02FACE42B271C0B00FA2534 /* AppDelegate.swift in Sources */,
 				E071756C2B4FF327007794D0 /* CompleteViewController.swift in Sources */,
@@ -196,6 +215,7 @@
 				E02FACE62B271C0B00FA2534 /* SceneDelegate.swift in Sources */,
 				E071756A2B4FF149007794D0 /* MainViewController.swift in Sources */,
 				E07175752B51221E007794D0 /* CompleteTableViewCell.swift in Sources */,
+				E078252F2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift in Sources */,
 				E07175732B51023E007794D0 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

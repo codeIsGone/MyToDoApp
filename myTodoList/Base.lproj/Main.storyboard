@@ -51,6 +51,15 @@
                                     <constraint firstAttribute="width" secondItem="y44-YV-8uM" secondAttribute="height" multiplier="1:1" constant="1" id="lrU-C8-JzQ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-L9-xk6">
+                                <rect key="frame" x="153" y="566" width="73" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Profile"/>
+                                <connections>
+                                    <segue destination="JWf-xE-qGH" kind="show" id="8GO-0w-CXa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RJN-ZH-AY0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,6 +176,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCu-HO-wAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073" y="706"/>
+        </scene>
+        <!--Profile Design View Controller-->
+        <scene sceneID="Po8-0t-pxO">
+            <objects>
+                <viewController id="JWf-xE-qGH" customClass="ProfileDesignViewController" customModule="myTodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4el-RC-dVK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aeL-mg-kdH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OdC-mJ-MLr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2FG-Xk-SPi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="1396"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -411,14 +436,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="groupCell" id="Y6a-ru-Pbj" customClass="GroupTableViewCell" customModule="myTodoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y6a-ru-Pbj" id="cAW-0S-eda">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-Mk-75B">
-                                                    <rect key="frame" x="44" y="11.000000000000002" width="311" height="20.666666666666671"/>
+                                                    <rect key="frame" x="44" y="11.000000000000002" width="311" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -486,7 +511,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
