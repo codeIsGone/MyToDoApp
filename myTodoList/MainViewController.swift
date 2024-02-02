@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import AVKit
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var mainLogoImage: UIImageView!
     
+    let apiMagager = API()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DataStore.shared.readTask()
+        apiMagager.getVideoData()
         
         //URL 주소 설정
         let logoImageURLSource = "https://spartacodingclub.kr/css/images/scc-og.jpg"
@@ -38,15 +42,20 @@ class MainViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func videoVCBtTap(_ sender: UIButton) {
+        
+        let avVC = AVPlayerViewController()
+        
+        let randomIndex = Int.random(in: apiMagager.videoData.indices)
+        
+        print(randomIndex)
+        
+        guard let videoURL = URL(string: apiMagager.videoData[randomIndex].videoUrl) else { return }
+        
+        let avplayer = AVPlayer(url: videoURL)
+        
+        avVC.player = avplayer
+        
+        self.navigationController?.pushViewController(avVC, animated: true)
     }
-    */
-
 }

@@ -60,6 +60,15 @@
                                     <segue destination="JWf-xE-qGH" kind="show" id="8GO-0w-CXa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-0i-c0k">
+                                <rect key="frame" x="67" y="631" width="241" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RandomVideoViewController"/>
+                                <connections>
+                                    <action selector="videoVCBtTap:" destination="qkM-nm-B40" eventType="touchUpInside" id="wUQ-y4-7FL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RJN-ZH-AY0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,14 +101,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completeCell" id="fZz-QS-pa8" customClass="CompleteTableViewCell" customModule="myTodoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="21"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="21.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fZz-QS-pa8" id="1lJ-Ot-Ud3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="21.333333969116211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-6W-E3f">
-                                                    <rect key="frame" x="24" y="0.0" width="351" height="21"/>
+                                                    <rect key="frame" x="24" y="0.0" width="351" height="21.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -436,14 +445,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="groupCell" id="Y6a-ru-Pbj" customClass="GroupTableViewCell" customModule="myTodoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y6a-ru-Pbj" id="cAW-0S-eda">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-Mk-75B">
-                                                    <rect key="frame" x="44" y="11.000000000000002" width="311" height="21.666666666666671"/>
+                                                    <rect key="frame" x="44" y="11.000000000000002" width="311" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -502,11 +511,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="gearshape.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="folder.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="gearshape.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="pencil.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="plus.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="xmark.circle.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

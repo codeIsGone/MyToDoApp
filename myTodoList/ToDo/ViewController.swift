@@ -199,7 +199,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
 
         cell.setCell(indexPath: indexPath)
-                
+        
         return cell
     }
     

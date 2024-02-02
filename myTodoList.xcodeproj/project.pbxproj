@@ -25,6 +25,7 @@
 		E078252F2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078252E2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift */; };
 		E07825312B6B2E5F00F69C1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07825302B6B2E5F00F69C1B /* ProfileViewController.swift */; };
 		E07825592B6B8A6000F69C1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E07825572B6B8A6000F69C1B /* Model.xcdatamodeld */; };
+		E0D1A0152B6CA32E007E878D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1A0142B6CA32E007E878D /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E078252E2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E07825302B6B2E5F00F69C1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E07825582B6B8A6000F69C1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E0D1A0142B6CA32E007E878D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E02FACF72B27217500FA2534 /* Data.swift */,
+				E0D1A0142B6CA32E007E878D /* API.swift */,
 				E07825572B6B8A6000F69C1B /* Model.xcdatamodeld */,
 			);
 			path = Model;
@@ -228,6 +231,7 @@
 				E071756A2B4FF149007794D0 /* MainViewController.swift in Sources */,
 				E07175752B51221E007794D0 /* CompleteTableViewCell.swift in Sources */,
 				E078252F2B6B2E2400F69C1B /* GalleryCollectionViewCell.swift in Sources */,
+				E0D1A0152B6CA32E007E878D /* API.swift in Sources */,
 				E07175732B51023E007794D0 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

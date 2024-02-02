@@ -56,10 +56,10 @@ class DataStore {
     func fetchTaskTitle(title: String, index: Int) {
         guard let context = self.persistentContainer?.viewContext else { return }
         
+        print ("Title Update: \(self.tasks[index].title!) -> \(title) ")
         self.tasks[index].title = title
         self.tasks[index].modifyDate = Date.now
         
-        print ("Update: Title 수정")
         try? context.save()
     }
     
@@ -67,10 +67,11 @@ class DataStore {
     func fetchTaskIsCompleted(index: Int) {
         guard let context = self.persistentContainer?.viewContext else { return }
         
+        print ("isCompleted Update: \(self.tasks[index].isCompleted) -> \(!self.tasks[index].isCompleted)")
+        
         self.tasks[index].isCompleted = !self.tasks[index].isCompleted
         self.tasks[index].modifyDate = Date.now
         
-        print ("Update: isCompleted 수정")
         try? context.save()
     }
     

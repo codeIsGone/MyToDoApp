@@ -11,33 +11,19 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     let cellImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "gallery"))
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
-    let iview: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
-        return view
-    }()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        addSubview(iview)
-        
+        // 셀에 이미지 뷰 추가
         addSubview(cellImage)
-        setUI()
+        cellImage.frame = bounds
     }
-}
-
-extension GalleryCollectionViewCell {
-    func setUI() {
-        iview.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            iview.topAnchor.constraint(equalTo: self.topAnchor),
-            iview.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            iview.rightAnchor.constraint(equalTo: self.rightAnchor),
-            iview.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
